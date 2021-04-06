@@ -1,0 +1,32 @@
+.header-grid{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.timecard{
+    text-align: center;
+    background-color: darkgray;
+}
+.navbar{
+    background-color: lightgrey;
+}
+.header-picture{
+    max-width: 15%;
+    height: auto;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.welcome-and-date{
+    text-align: center;
+    background-color: darkgray;
+}
+a {
+    color: black;
+    text-decoration: none;
+  }

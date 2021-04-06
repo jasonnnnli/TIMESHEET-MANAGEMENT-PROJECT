@@ -1,0 +1,22 @@
+<div class="body-grid">
+    <div class="sidebar"><app-admin-sidebar></app-admin-sidebar></div>
+    <div class="main-port">
+        <table class='table table-borderless'>
+            <thead style="background-color: black; color: white; font-style: italic;">
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="index as i; first as f; last as l; let o = odd; let e = even"
+              [ngClass] = "{oddStyle: o, evenStyle: e}">
+                <td>{{i}}</td>
+                <td>{{f}}</td>
+                <td>{{l}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
