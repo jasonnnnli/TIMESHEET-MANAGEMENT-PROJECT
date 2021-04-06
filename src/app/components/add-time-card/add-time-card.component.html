@@ -1,0 +1,77 @@
+<div class="container-fluid">
+<form [formGroup]="timecardForm" (ngSubmit)="onSubmit(timecardForm)">   
+    <label> Work Date</label><br>
+    <input type="date"
+    formControlName="date" class="form-control"> 
+    <div *ngIf="date.errors && date.touched">
+    <div class="alert alert-danger" *ngIf="date.errors?.required">Date is required</div>
+    </div>
+
+    <label>Location</label>
+    <select [class.is-invalid]="location.invalid && location.touched"
+    formControlName="location" class="form-control">
+        <optgroup label="East">
+            <option *ngFor="let i of locationsEast"> {{i}}</option>
+        </optgroup>
+        <optgroup label="West">
+            <option *ngFor="let i of locationsWest"> {{i}}</option>
+        </optgroup>
+    </select>
+    
+    <label>Sector</label>
+    <input [value]=getSector()
+    formControlName="sector" class="form-control"> 
+    
+    <label>Doctor Name</label>
+    <select [class.is-invalid]="location.invalid && location.touched"
+    formControlName="doctor" class="form-control">
+        <option *ngFor="let i of doctors"> {{i.firstName }} {{i.lastName}}</option>
+    </select>
+
+    <label> File Number </label>
+    <input [value]=getFileNumber()
+    formControlName="fileNumber" class="form-control">
+
+    <label>Time In </label>
+    <input type="time"
+    formControlName="timeIn" class="form-control">
+
+    <label>Time Out </label>
+    <input type="time" [class.is-invalid]="timeOut.invalid && timeOut.touched"
+    formControlName="timeOut" class="form-control">
+
+    <div *ngIf="timeOutError">
+        <div class="alert alert-danger">Time Out need to be later than Time In</div>
+    </div>
+
+    <label>Hours Worked </label>
+    <input [value]=getHoursWorked()
+    formControlName="hoursWorked" class="form-control">
+    
+    <label> Hour Code </label>
+    <select
+    formControlName="hourCode" class="form-control">
+        <option> FBP</option>
+        <option> AMCO</option>
+    </select>
+
+    <label>FBP Payroll </label>
+    <input type="text" [class.is-invalid]="fbpPayroll.invalid && fbpPayroll.touched"
+    formControlName="fbpPayroll" class="form-control">
+    <div *ngIf="fbpPayroll.touched && fbpPayroll.errors">
+    <div class="alert alert-danger" *ngIf="fbpPayroll.errors.required">Payroll is required</div>
+    <div class="alert alert-danger" *ngIf="fbpPayroll.errors.pattern">Payroll must be numbers</div>
+    </div>
+
+    <label>AMCO Payroll </label>
+    <input type="text" [class.is-invalid]="amcoPayroll.invalid && amcoPayroll.touched"
+    formControlName="amcoPayroll" class="form-control">
+    <div *ngIf="amcoPayroll.touched && amcoPayroll.errors">
+    <div class="alert alert-danger" *ngIf="amcoPayroll.errors.required">Payroll is required</div>
+    <div class="alert alert-danger" *ngIf="amcoPayroll.errors.pattern">Payroll must be numbers</div>
+    </div>
+    <br>
+    <br>
+    <button class="btn btn-primary" 
+    [disabled]="timecardForm.invalid || timeOutError " type="submit">Submit Info</button></form>
+</div>

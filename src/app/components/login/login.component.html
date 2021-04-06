@@ -1,0 +1,54 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container login-container">
+                <div class="col-md-6 login-form-1">
+                    <h3>Login for Form 1</h3>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">   
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Username *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <h3>Simple Adding User</h3>
+                    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit2(addUserForm)">   
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="username" placeholder="Username" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="password" placeholder="Password" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="firstName" placeholder="First Name" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="lastName" placeholder="Last Name" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="type" placeholder="Type" value="" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Add" />
+                        </div>
+                        
+                    </form>
+                </div>
+            
+</div>

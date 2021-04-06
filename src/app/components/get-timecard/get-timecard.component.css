@@ -1,0 +1,25 @@
+/* Structure */
+table {
+    width: 100%;
+    border: solid;
+  }
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 200px;
+}
+input {
+    border: solid grey;
+}
+td.mat-cell {
+    /* row padding */
+    /* row border */
+    padding: 5px;
+    border-bottom: 1px solid #8b867b;
+    border-top: 1px solid #8b867b;
+    border-left: 1px solid #8b867b;
+   }
+th.mat-header-cell {
+    padding: 10px;
+    text-align: center;
+}
