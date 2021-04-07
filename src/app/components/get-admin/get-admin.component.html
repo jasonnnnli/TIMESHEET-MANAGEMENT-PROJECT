@@ -1,1 +1,14 @@
 <p>get-admin works!</p>
+<p>get-admin works!</p>
+<div *ngIf="users">
+      <h2 [ngStyle]="{'margin-bottom':'20px'}">users Detail</h2>
+      <p>users Id: {{users.id}}</p>
+      <p>Name: {{users.firstName}} {{users.lastName}}</p>
+      <p>email: {{users.email}} </p>
+      <p>type: {{users.type}} </p>
+    
+    </div>
+    <div>
+      <button (click)="goBack()">Go Back</button>
+    </div>
+    <router-outlet></router-outlet> 
