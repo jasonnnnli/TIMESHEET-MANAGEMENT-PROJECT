@@ -1,5 +1,27 @@
 <p>get-report works!</p>
-<div>
+<div *ngIf="timecards">
+      <h2 [ngStyle]="{'margin-bottom':'20px'}">timecards report</h2>
+      <p>timecards date: {{timecards.date}}</p>
+      <p>timecards location: {{timecards.location}}</p>
+      <p>timecards sector: {{timecards.sector}} </p>
+      <p>timecards filenumber: {{timecards.fileNumber}} </p>
+      <p>timecards timeIn: {{timecards.timeIn}} </p>
+
+      <p>timecards timeOut: {{timecards.timeOut}} </p>
+
+      <p>timecards hourCode: {{timecards.hourCode}} </p>
+
+      <p>timecards fbpPayroll: {{timecards.fbpPayroll}} </p>
+
+      <p>timecards amcoPayroll: {{timecards.amcoPayroll}} </p>
+
+      <p>timecards hoursWorked: {{timecards.hoursWorked}} </p>
+
+      <p>timecards id: {{timecards.id}} </p>
+
+    
+    </div>
+    <div>
       <button (click)="goBack()">Go Back</button>
     </div>
     <router-outlet></router-outlet> 
