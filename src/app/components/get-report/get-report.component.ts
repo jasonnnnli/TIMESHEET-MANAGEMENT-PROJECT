@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MockDataService } from 'src/app/services/mock-data.service';
 
 @Component({
   selector: 'app-get-report',
@@ -7,13 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./get-report.component.css']
 })
 export class GetReportComponent implements OnInit {
+  timecards: any;
+  errorMsg: any;
 
-  constructor(private router: Router) { }
+  constructor(private mockData: MockDataService, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
  
+    this.mockData.getTimecards().subscribe(
+      (data) => {
+        this.timecards = data; 
+        console.log(data); 
+      },
+      (error) => {this.errorMsg = error; console.log(error); }
+    );
   }
+
   goBack(){
-    this.router.navigate(['/home']);
-}
+      this.router.navigate(['/home']);
+  }
 }
